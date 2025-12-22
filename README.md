@@ -39,6 +39,15 @@ If using Windows, go to the dist folder created inside the fmavm folder and run:
 FMaVM.exe -h
 ```
 
+### Version Naming:
+- v.-large_change_version-.-small/medium_change_version-.-bug_fixes--fixes_in_README.md_or_"video_de_ejemplo.mavm"-
+
+### Beta naming:
+- v.-large_change_version-.-small/medium_change_version-.-bug_fixes-_beta_-beta_number--fixes_in_README.md_or_"video_de_ejemplo.mavm"-
+
+## License
+All content in this repository is under GPL-3.0.
+
 ### Español:
 
 ### fmavm (File MaVM)
@@ -77,3 +86,15 @@ Si usa Windows, vaya a la carpeta dist creada dentro de la carpeta fmavm y ejecu
 ```terminal
 FMaVM.exe -h
 ```
+
+
+### nombracion de versiones:
+ - v.-version_de_cambios_grandes-.-version_de_cambios_pequeños/medianos-.-correccion_de_errores--correciones_del_README.md_o_el_video_de_ejemplo(video_de_ejemplo.mavm)-
+
+
+### nombracion de betas:
+
+ - v.-version_de_cambios_grandes-.-version_de_cambios_pequeños/medianos-.-correccion_de_errores-_beta_-numero_de_beta--correciones_del_README.md_o_el_video_de_ejemplo(video_de_ejemplo.mavm)-
+
+## Licencia
+Todo el contenido de este repositorio está bajo GPL-3.0.
