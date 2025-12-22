@@ -24,7 +24,7 @@ If you don't want to use it this way, you can use the precompiled version for Li
 git clone https://github.com/SoPepo32/fmavm.git
 ```
 ```terminal
-cd fmavm
+cd fmavm/code
 ```
 If using Linux:
 ```terminal
@@ -75,7 +75,7 @@ Si no quieres usarlo de esta manera, puedes usar la versión precompilada para L
 git clone https://github.com/SoPepo32/fmavm.git
 ```
 ```terminal
-cd fmavm
+cd fmavm/code
 ```
 Si usa Linux:
 ```terminal
