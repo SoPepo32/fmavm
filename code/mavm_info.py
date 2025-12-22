@@ -1,3 +1,4 @@
+import json
 import os
 
 class mavm_info:
@@ -8,55 +9,65 @@ class mavm_info:
 
         file_dat_json = {}
         for file_dat in file_data[1:]:
-            file_name, file_d = file_d.split('+--')
+            file_name, file_d = file_dat.split(b'+--')
             file_dat_json[file_name] = file_d
         
         if not(json_style):
-            file_dat_extra = ''
-
-            file_dat = ''
+            files_dat_extra = ''
+            files_dat = ''
+            mavm_v = ''
             for file_name, file_dat in file_dat_json.items():
                 file_name_b = file_name.decode('utf-8')
-                if file_name_b == 'metadata.json':
-                    file_dat += 'file name: <<metadata.json>> file type: <json>/metadata\n'
+                if 'metadata.json' == file_name_b:
+                    file_dat_list = json.loads(file_dat.decode('utf-8'))
+                    mavm_v = file_dat_list["mavm_version"]
+                    files_dat += 'file name: <<metadata.json>> file type: <json>/metadata\n'
                 elif '.json' in file_name_b:
-                    file_dat += f'file name: <<{file_name_b}>> file type: <json>/menu\n'
+                    files_dat += f'file name: <<{file_name_b}>> file type: <json>/menu\n'
                 elif '.opus' in file_name_b:
-                    file_dat += f'file name: <<{file_name_b}>> file type: <opus>/sound\n'
+                    files_dat += f'file name: <<{file_name_b}>> file type: <opus>/sound\n'
                 elif '.png' in file_name_b:
-                    file_dat += f'file name: <<{file_name_b}>> file type: <png>/image\n'
+                    files_dat += f'file name: <<{file_name_b}>> file type: <png>/image\n'
+                elif '.mkv' in file_name_b:
+                    files_dat += f'file name: <<{file_name_b}>> file type: <mkv>/video\n'
                 else:
-                    file_dat_extra += f'file name: <<{file_name_b}>> file type: <{os.path.splitext(file_name_b)[1]}>\n'
-                
+                    files_dat_extra += f'file name: <<{file_name_b}>> file type: <{os.path.splitext(file_name_b)[1]}>\n'
+            
+            file_dat_complete = f'MaVM version: {mavm_v}\n'
             if type_of_information == 'embedded':
-                file_dat_complete = f'embedded content:\n{file_dat_extra}'
+                file_dat_complete += f'embedded content:\n{files_dat_extra}'
             elif type_of_information == 'main_content':
-                file_dat_complete = f'main content:\n{file_dat}'
+                file_dat_complete += f'main content:\n{files_dat}'
             else:
-                file_dat_complete = f'main content:\n{file_dat}\n\nembedded content:\n{file_dat_extra}'
+                file_dat_complete += f'main content:\n{files_dat}\n\nembedded content:\n{files_dat_extra}'
                 
             print(file_dat_complete)
         else:
-            file_dat_extra = {}
-
-            file_dat = []
+            files_dat_extra = []
+            files_dat = []
+            mavm_v = ''
             for file_name, file_dat in file_dat_json.items():
-                if file_name.decode('utf-8') == 'metadata.json':
-                    file_dat.append({'file_name': {file_name.decode('utf-8')}, 'file_type': 'json/metadata'})
-                elif '.json' in file_name.decode('utf-8'):
-                    file_dat.append({'file_name': {file_name.decode('utf-8')}, 'file_type': 'json/menu'})
-                elif '.opus' in file_name.decode('utf-8'):
-                    file_dat.append({'file_name': {file_name.decode('utf-8')}, 'file_type': 'opus/sound'})
-                elif '.png' in file_name.decode('utf-8'):
-                    file_dat.append({'file_name': {file_name.decode('utf-8')}, 'file_type': 'png/image'})
+                file_name_b = file_name.decode('utf-8')
+                if 'metadata.json' == file_name_b:
+                    file_dat_list = json.loads(file_dat.decode('utf-8'))
+                    mavm_v = file_dat_list["mavm_version"]
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'json/metadata'})
+                elif '.json' in file_name_b:
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'json/menu'})
+                elif '.opus' in file_name_b:
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'opus/sound'})
+                elif '.png' in file_name_b:
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'png/image'})
+                elif '.mkv' in file_name_b:
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'mkv/video'})
                 else:
-                    file_dat_extra.append({'file_name': {file_name.decode('utf-8')}, 'file_type': {os.path.splitext(file_name.decode('utf-8'))[1]}})
+                    files_dat_extra.append({'file_name': file_name_b, 'file_type': os.path.splitext(file_name_b)[1]})
                 
             if type_of_information == 'embedded':
-                file_dat_complete = {'embedded content':file_dat_extra}
+                file_dat_complete = {'MaVM version':mavm_v,'embedded content':files_dat_extra}
             elif type_of_information == 'main_content':
-                file_dat_complete = {'main content':file_dat}
+                file_dat_complete = {'MaVM version':mavm_v,'main content':files_dat}
             else:
-                file_dat_complete = {'embedded content':file_dat_extra,'main content':file_dat}
+                file_dat_complete = {'MaVM version':mavm_v,'embedded content':files_dat_extra,'main content':files_dat}
                 
             print(file_dat_complete)

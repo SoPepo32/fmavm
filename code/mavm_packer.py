@@ -1,3 +1,5 @@
+import os
+
 class create_mavm:
     def __init__(self, files="", file_out="video.mavm", r=None,verbose=False):
         self.file_out = file_out

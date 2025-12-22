@@ -56,7 +56,7 @@ def main():
         if not('.mavm' in args.file_i.lower()):
             print("The file must be in MaVM format")
             exit()
-        elif args.files_i == None:
+        elif args.file_i == None:
             print("You need to set the input file.")
             exit()
         if args.type_of_information != None:
@@ -75,5 +75,6 @@ def main():
             exit()
         else:
             extract(file=args.file_e, files=args.files_e,output_folder=args.output_folder,verbose=args.verbose)
+
 
 main()
