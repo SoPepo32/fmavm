@@ -3,6 +3,8 @@
 ### fmavm (File MaVM)
 fmavm is a terminal program for working with MaVM files.
 
+## Link to the MaVM format repository: [SoPepo32/MaVM](https://github.com/SoPepo32/mavm)
+
 ## Usage:
 First, install Python 3 (Python 3.10 is recommended because that's what I used for testing).
 Second, install the dependencies with:
@@ -52,6 +54,9 @@ All content in this repository is under GPL-3.0.
 
 ### fmavm (File MaVM)
 fmavm es un programa de terminal para trabajar con archivos MaVM.
+
+## Enlace al repositorio de formato MaVM: [SoPepo32/MaVM](https://github.com/SoPepo32/mavm)
+
 ## Uso:
 Primero, instala Python 3 (se recomienda Python 3.10 porque es el que usé para las pruebas).
 Segundo, instala las dependencias con:
