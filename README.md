@@ -41,6 +41,41 @@ If using Windows, go to the dist folder created inside the fmavm folder and run:
 FMaVM.exe -h
 ```
 
+what I should return:
+```terminal
+usage: fmavm [-h] [--verbose] [--package] [--files_r FILES_R] [--file FILE]
+             [--file_out FILE_OUT] [--information] [--file_i FILE_I]
+             [--type_of_information TYPE_OF_INFORMATION] [--json_style]
+             [--extract] [--file_e FILE_E] [--files_e FILES_E]
+             [--output_folder OUTPUT_FOLDER]
+
+mavm packager
+
+options:
+  -h, --help            show this help message and exit
+  --verbose             detailed mode
+                        
+                        
+  --package             Option to package multiple files into a single MaVM file (version in the range of v.3.x.x)
+  --files_r FILES_R     txt document with the files to import
+  --file FILE           file to import (JSON/MKV/OPUS)
+  --file_out FILE_OUT   output file in .mavm format
+                        
+                        
+  --information         Option to extract information (version in the range of v.3.x.x)
+  --file_i FILE_I       MaVM file to extract the information
+  --type_of_information TYPE_OF_INFORMATION
+                        type of information to extract (embedded/main_content)
+  --json_style          Option to select JSON style output
+                        
+                        
+  --extract             Option to extract information (version in the range of v.3.x.x)
+  --file_e FILE_E       MaVM file to extract the content
+  --files_e FILES_E     files to extract (format ["file1.json","file1.mkv","file.opus"])
+  --output_folder OUTPUT_FOLDER
+                        output folder for the content to be extracted
+```
+
 ### Version Naming:
 - v.-large_change_version-.-small/medium_change_version-.-bug_fixes--fixes_in_README.md_or_"video_de_ejemplo.mavm"-
 
@@ -92,6 +127,40 @@ Si usa Windows, vaya a la carpeta dist creada dentro de la carpeta fmavm y ejecu
 FMaVM.exe -h
 ```
 
+lo que deberia devolver:
+```terminal
+usage: fmavm [-h] [--verbose] [--package] [--files_r FILES_R] [--file FILE]
+             [--file_out FILE_OUT] [--information] [--file_i FILE_I]
+             [--type_of_information TYPE_OF_INFORMATION] [--json_style]
+             [--extract] [--file_e FILE_E] [--files_e FILES_E]
+             [--output_folder OUTPUT_FOLDER]
+
+mavm packager
+
+options:
+  -h, --help            show this help message and exit
+  --verbose             detailed mode
+                        
+                        
+  --package             Option to package multiple files into a single MaVM file (version in the range of v.3.x.x)
+  --files_r FILES_R     txt document with the files to import
+  --file FILE           file to import (JSON/MKV/OPUS)
+  --file_out FILE_OUT   output file in .mavm format
+                        
+                        
+  --information         Option to extract information (version in the range of v.3.x.x)
+  --file_i FILE_I       MaVM file to extract the information
+  --type_of_information TYPE_OF_INFORMATION
+                        type of information to extract (embedded/main_content)
+  --json_style          Option to select JSON style output
+                        
+                        
+  --extract             Option to extract information (version in the range of v.3.x.x)
+  --file_e FILE_E       MaVM file to extract the content
+  --files_e FILES_E     files to extract (format ["file1.json","file1.mkv","file.opus"])
+  --output_folder OUTPUT_FOLDER
+                        output folder for the content to be extracted
+```
 
 ### nombracion de versiones:
  - v.-version_de_cambios_grandes-.-version_de_cambios_pequeños/medianos-.-correccion_de_errores--correciones_del_README.md_o_el_video_de_ejemplo(video_de_ejemplo.mavm)-
