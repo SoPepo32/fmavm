@@ -22,10 +22,14 @@ class mavm_info:
                     file_dat_list = json.loads(file_dat.decode('utf-8'))
                     mavm_v = file_dat_list["mavm_version"]
                     files_dat += 'file name: <<metadata.json>> file type: <json>/metadata\n'
-                elif '.json' in file_name_b:
-                    files_dat += f'file name: <<{file_name_b}>> file type: <json>/menu\n'
+                elif '.epub' in file_name_b:
+                    files_dat += f'file name: <<{file_name_b}>> file type: <epub>/ebook\n'
                 elif '.opus' in file_name_b:
                     files_dat += f'file name: <<{file_name_b}>> file type: <opus>/sound\n'
+                elif '.json' in file_name_b:
+                    files_dat += f'file name: <<{file_name_b}>> file type: <json>/menu\n'
+                elif '.mka' in file_name_b:
+                    files_dat += f'file name: <<{file_name_b}>> file type: <mka>/sound\n'
                 elif '.png' in file_name_b:
                     files_dat += f'file name: <<{file_name_b}>> file type: <png>/image\n'
                 elif '.mkv' in file_name_b:
@@ -51,15 +55,19 @@ class mavm_info:
                 if 'metadata.json' == file_name_b:
                     file_dat_list = json.loads(file_dat.decode('utf-8'))
                     mavm_v = file_dat_list["mavm_version"]
-                    files_dat.append({'file_name': file_name_b, 'file_type': 'json/metadata'})
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'json','format_type': 'metadata'})
                 elif '.json' in file_name_b:
-                    files_dat.append({'file_name': file_name_b, 'file_type': 'json/menu'})
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'json','format_type': 'menu'})
+                elif '.epub' in file_name_b:
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'epub','format_type': 'ebook'})
                 elif '.opus' in file_name_b:
-                    files_dat.append({'file_name': file_name_b, 'file_type': 'opus/sound'})
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'opus','format_type': 'sound'})
+                elif '.mka' in file_name_b:
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'mka','format_type': 'sound'})
                 elif '.png' in file_name_b:
-                    files_dat.append({'file_name': file_name_b, 'file_type': 'png/image'})
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'png','format_type': 'image'})
                 elif '.mkv' in file_name_b:
-                    files_dat.append({'file_name': file_name_b, 'file_type': 'mkv/video'})
+                    files_dat.append({'file_name': file_name_b, 'file_type': 'mkv','format_type': 'video'})
                 else:
                     files_dat_extra.append({'file_name': file_name_b, 'file_type': os.path.splitext(file_name_b)[1]})
                 
