@@ -43,11 +43,11 @@ FMaVM.exe -h
 
 what I should return:
 ```terminal
-usage: fmavm [-h] [--verbose] [--package] [--files_r FILES_R] [--file FILE]
-             [--file_out FILE_OUT] [--information] [--file_i FILE_I]
-             [--type_of_information TYPE_OF_INFORMATION] [--json_style]
-             [--extract] [--file_e FILE_E] [--files_e FILES_E]
-             [--output_folder OUTPUT_FOLDER]
+uusage: main.py [-h] [--verbose] [--package] [--files_r FILES_R] [--file FILE]
+               [--file_out FILE_OUT] [--information] [--file_i FILE_I]
+               [--type_of_information TYPE_OF_INFORMATION] [--json_style]
+               [--extract] [--file_e FILE_E] [--files_e FILES_E]
+               [--output_folder OUTPUT_FOLDER]
 
 mavm packager
 
@@ -129,11 +129,11 @@ FMaVM.exe -h
 
 lo que deberia devolver:
 ```terminal
-usage: fmavm [-h] [--verbose] [--package] [--files_r FILES_R] [--file FILE]
-             [--file_out FILE_OUT] [--information] [--file_i FILE_I]
-             [--type_of_information TYPE_OF_INFORMATION] [--json_style]
-             [--extract] [--file_e FILE_E] [--files_e FILES_E]
-             [--output_folder OUTPUT_FOLDER]
+uusage: main.py [-h] [--verbose] [--package] [--files_r FILES_R] [--file FILE]
+               [--file_out FILE_OUT] [--information] [--file_i FILE_I]
+               [--type_of_information TYPE_OF_INFORMATION] [--json_style]
+               [--extract] [--file_e FILE_E] [--files_e FILES_E]
+               [--output_folder OUTPUT_FOLDER]
 
 mavm packager
 
